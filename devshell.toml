@@ -1,0 +1,12 @@
+imports = [ "git.hooks" ]
+
+[devshell]
+name = "fend"
+
+[git.hooks]
+enable = true
+pre-commit.text = """\
+  cargo clippy && \
+  cargo fmt -- --check && \
+  cargo test
+"""

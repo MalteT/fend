@@ -1,3 +1,5 @@
+cargo-features = ["edition2021"]
+
 [package]
 name = "fend-wasm"
 version = "1.0.1"

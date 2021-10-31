@@ -1,3 +1,5 @@
+cargo-features = ["edition2021"]
+
 [package]
 name = "fend"
 # Don't bump version numbers manually, use deploy.sh instead
@@ -11,6 +13,10 @@ license = "MIT"
 keywords = ["calculator", "cli", "conversion", "math", "tool"]
 edition = "2021"
 categories = ["command-line-utilities", "mathematics", "science"]
+
+[package.metadata.nix]
+build = true
+toolchain = "nightly"
 
 [dependencies]
 rustyline = { version =  "9.1.4", default-features = false, package = "rustyline-with-hint-fix" }
