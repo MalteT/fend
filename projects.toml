@@ -1,0 +1,33 @@
+# projects.toml file describing inputs for dream2nix
+#
+# To re-generate this file, run:
+#   nix run .#detect-projects $source
+# ... where `$source` points to the source of your project.
+#
+# If the local flake is unavailable, alternatively execute the app from the
+# upstream dream2nix flake:
+#   nix run github:nix-community/dream2nix#detect-projects $source
+
+["fend"]
+name = ""
+relPath = ""
+subsystem = "rust"
+translator = "cargo-lock"
+
+["fend".subsystemInfo]
+workspaceMembers = [ "cli", "core", "wasm",]
+[["fend".subsystemInfo.crates]]
+name = "fend"
+relPath = "cli"
+version = "1.0.1"
+
+[["fend".subsystemInfo.crates]]
+name = "fend-core"
+relPath = "core"
+version = "1.0.1"
+
+[["fend".subsystemInfo.crates]]
+name = "fend-wasm"
+relPath = "wasm"
+version = "1.0.1"
+
